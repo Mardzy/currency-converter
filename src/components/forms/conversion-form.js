@@ -1,57 +1,43 @@
 import React, { Component } from 'react';
-import { Field, reduxForm/*, formValueSelector*/ } from 'redux-form';
-import { currencyInput} from '../fields';
-import { validate } from "../../validation";
-
+import { Field, reduxForm } from 'redux-form';
+import { currencyInput } from '../fields';
+import CountryOptionList from '../elements/country-option-list'
 class ConversionForm extends Component {
 
-    mapOptionElements = obj => {
-        return Object.keys(obj)
-            .map(key =>
-                <option
-                    key={key}
-                    value={key}
-                    onChange={()=>1234}
-                >{obj[key]}</option>);
-    };
-
     renderForm = props => {
-    // console.log('form props', props);
         const { handleSubmit, symbols } = props;
+
         return (
             <form
                 onSubmit={handleSubmit}>
                 <div>
-                    <label>Select Base Currency</label>
+                    <label>Convert from</label>
                     <Field
                         name='from'
                         component='select'>
-                        <option></option>
-                        {this.mapOptionElements(symbols)}
-
+                        <option>CHOOSE A CURRENCY</option>
+                        <CountryOptionList symbols={symbols}/>
                     </Field>
                 </div>
                 <div>
-                    <label>Select Currency to Convert</label>
-                <Field
-                    name='to'
-                    component='select'>
-                    <option></option>
-                    {this.mapOptionElements(symbols)}
-                </Field>
+                    <label>Convert to</label>
+                    <Field
+                        name='to'
+                        component='select'>
+                        <option>CHOOSE A CURRENCY</option>
+                        <CountryOptionList symbols={symbols}/>
+                    </Field>
                 </div>
                 <Field
                     name='amount'
-                    label='Enter an amount'
+                    label='Amount for exchange'
                     min='.00'
                     component={currencyInput}
-                    />
-
-                <button>Convert</button>
+                />
+                <button>Submit</button>
             </form>
         );
-    }
-
+    };
 
     render() {
         return this.renderForm(this.props);
@@ -59,8 +45,7 @@ class ConversionForm extends Component {
 }
 
 ConversionForm = reduxForm({
-    form: 'conversionForm',
-    validate
+    form: 'conversionForm'
 })(ConversionForm);
 
 export default ConversionForm;

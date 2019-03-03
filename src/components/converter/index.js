@@ -1,10 +1,14 @@
 import React from 'react';
 
-const ConversionResult = ({response})  => {
-    //keeping props available for later dev work
-    const {/*date, info, query,*/ result} = response;
+const ConversionResult = ({res, symbols}) => {
+    const { query, result } = res;
 
-    return result ? <div>{result}</div> : '';
+    if (res && query && result) {
+        return <div>You will receive {result} in {symbols[query.to]}</div>
+    }
+    else {
+        return '';
+    }
 };
 
 export default ConversionResult;

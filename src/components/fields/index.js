@@ -1,7 +1,7 @@
 import React from 'react';
 import CurrencyInput from 'react-currency-input';
 export const currencyInput = props => {
-    const { label, input, type, meta,  min, prefix } = props;
+    const { label, input, type, min, prefix } = props;
 
     return (
         <div>
@@ -15,10 +15,6 @@ export const currencyInput = props => {
                 allowEmpty={false}
                 decimalSeparator='.'
             />
-            {meta.error && meta.touched &&
-            !meta.invalid && (
-                <div style={{ color: 'red' }}>{meta.error}</div>
-            )}
         </div>
     );
 };

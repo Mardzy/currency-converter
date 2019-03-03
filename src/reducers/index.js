@@ -10,3 +10,4 @@ export default combineReducers({
     fluctuation: fluctuationReducer,
     timeSeries: timeSeriesReducer
 });
+
