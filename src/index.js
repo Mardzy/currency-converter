@@ -16,9 +16,7 @@ const combineAndReduce = combineReducers(reducerObj);
 
 const store = createStore(
     combineAndReduce,
-    applyMiddleware(thunk),
-    window._REDUX_DEVTOOLS_EXTENSION__ &&
-    window._REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(thunk)
 );
 
 ReactDom.render(

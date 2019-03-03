@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSymbols, fetchConversion } from '../../actions';
 import ConversionForm from '../../components/forms/conversion-form'
-import ConversionResult from '../../components/result';
+import ConversionResult from '../../components/converter/index';
 
 class CurrencyConverter extends Component{
     componentDidMount() {
