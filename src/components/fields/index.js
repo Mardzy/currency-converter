@@ -14,6 +14,7 @@ export const currencyInput = props => {
                 prefix={prefix}
                 allowEmpty={false}
                 decimalSeparator='.'
+                className='text-center border-0'
             />
         </div>
     );

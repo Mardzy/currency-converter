@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { reducer as form } from 'redux-form';
 import thunk from 'redux-thunk'
+import styles from './styles/main.scss';
 
 import App from './components/app';
 import reducers from './reducers';

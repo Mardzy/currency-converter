@@ -5,7 +5,8 @@ const CountryOptionList = ({ symbols }) => {
         .map(key =>
             <option
                 key={key}
-                value={key}>
+                value={key}
+                className='text-center'>
                 {symbols[key]}
             </option>
         );

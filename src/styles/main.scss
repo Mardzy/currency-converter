@@ -1,0 +1,40 @@
+.jumbotron {
+  font-family: Tiempos-Semibold, serif;
+  height: 120px;
+  line-height: 120px;
+  margin: 0 0 20px 0 ;
+  padding: 0;
+  vertical-align: center;
+}
+
+.btn.btn-primary {
+  width: 250px;
+  margin-top: 20px;
+}
+
+.recharts-wrapper{
+  margin: 20px auto 0;
+}
+
+select.text-center {
+  margin-left: 15px;
+  text-align: center;
+}
+
+.converter-submit{
+  margin-top: 20px;
+}
+
+.converter-result{
+  div{
+    margin-top: 10px;
+  };
+}
+
+.converter-legend{
+  margin: 20px 0 0;
+  p {
+    font-size: 10px;
+    margin: 0;
+  }
+}

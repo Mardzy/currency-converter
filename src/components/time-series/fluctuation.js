@@ -6,12 +6,15 @@ function getKey(obj) {
     }
 }
 
-const Fluctuation = ({res}) => {
-    console.log('res', res);
-    const { rates, start_date, end_date } = res;
+function checkValues(rates) {
+    return Boolean(rates && rates[getKey(rates)] && rates[getKey(rates)].change_pct);
+}
 
-    if (rates && rates[getKey(rates)] && rates[getKey(rates)].change_pct) {
-        return <div>Over the last 30 days it's had a change of {rates[getKey(rates)].change_pct}&#37;</div>;
+const Fluctuation = ({res}) => {
+    const { rates } = res;
+    const text = `Over the last 30 days it's changed `;
+    if (checkValues(rates)) {
+        return <div>{text + rates[getKey(rates)].change_pct}&#37;</div>;
     }
     else {
         return '';
